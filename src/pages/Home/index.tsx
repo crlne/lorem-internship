@@ -6,8 +6,14 @@ import api from "../../api";
 import "../../styles/home.module.css";
 import "../../styles/global.css";
 
+
+interface PostsProps {
+    id: string;
+    title: string;  
+}
+
 export default function Home() {
-    const [userId, setUserId] = useState([])
+    const [userId, setUserId] = useState<PostsProps[]>([])
 
     useEffect(() => {
         api.get("posts")

@@ -4,15 +4,27 @@ import api from "../../api";
 
 import styles from "./posts.module.css";
 
-export default function Post() {
-    const [post, setPost] = useState({})
+interface PostsProps {
+    id: string;
+    title: string;
+    body: string;
+}
 
-    const { id } = useParams()
+export default function Post() {
+    const [post, setPost] = useState<PostsProps | null >(null);
+
+    const { id } = useParams<{ id: string }>()
 
     useEffect(() => {
         api.get(`posts/${id}`)
             .then(response => setPost(response.data));
     }, [])
+
+    if (!post) {
+        return (
+            <div>Loading...</div>
+        )
+    }
 
     return (
         <main>
