@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import api from "../../api";
+
+import styles from "./posts.module.css";
 
 export default function Post() {
     const [post, setPost] = useState({})
@@ -15,8 +17,10 @@ export default function Post() {
     return (
         <main>
             <div>
-                <h1>{post.title}</h1>  
+                <h1 className={styles.title}>{post.title}</h1>  
                 <p>{post.body}</p>
+
+                <Link to="/" className={styles.toHome}>Voltar</Link>
             </div>
         </main>
     );

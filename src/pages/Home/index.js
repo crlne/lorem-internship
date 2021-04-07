@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import api from "../../api";
 
 import "../../styles/home.module.css";
+import "../../styles/global.css";
 
 export default function Home() {
     const [userId, setUserId] = useState([])
@@ -15,10 +16,7 @@ export default function Home() {
 
     return (
         <>
-            <h1>
-            LOREM<strong>.</strong>
-            </h1>
-
+         <h1>LOREM<strong>.</strong> </h1>
             {userId?.map((posts) => (
             <li key={posts.id}>
                 <Link to={`/posts/${posts.id}`}>
@@ -26,6 +24,7 @@ export default function Home() {
                 </Link>
             </li>
             ))}
+
         </>
     )
 }
