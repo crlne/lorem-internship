@@ -5,7 +5,7 @@
 Criar uma aplicação para listagem e visualização de postagemm com duas Views<br />
 Lista de Posts direto de uma chamada API.<br />
 
-Paginas simples usando React, Typescripe e CSS. </br />
+Paginas simples usando <strong>React, Typescripe e CSS</strong>. <br />
 
 
 O que eu poderia ter melhorado e Possiveis otimizações: Interface da aplicação criando um UI mais atraente.
